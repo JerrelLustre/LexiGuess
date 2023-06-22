@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pokemon Guesser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../dist/output.css">
+
+</head>
+
+<body class="flex flex-col h-screen justify-between items-center  bg-[url('../src/img/bg.jpg')]" onload="firstLoad()">
+    <header class="py-7 text-center w-full bg-base shadow-base-shadow">
+        <h1 class="text-white font-logo font-pacifico text-5xl">
+            LexiGuess
+        </h1>
+    </header>
+    <main>
+        <!-- Loading icon -->
+        <lottie-player class="hidden" src="./lottie/loading.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+        <!-- Card -->
+        <div class="flex mx-5 flex-col px-4 py-8 gap-8 rounded-default bg-card max-w-[21.875rem]">
+            <!-- Top Container: Definition of word + message -->
+            <div class="flex flex-col justify-between py-5 px-2.5 items-center self-stretch rounded-default bg-white shadow-crd-shadow">
+                <p id="JSdef" class="font-roboto leading-[145%] font-bold self-stretch mb-4">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores veniam ducimus neque excepturi voluptate in cum nesciunt at nulla modi perspiciatis dolorem accusantium cupiditate impedit adipisci, id deleniti iure quidem.
+                </p>
+                <div id="JSthinkmsg" class="flex justify-between items-center self-stretch">
+                    <img id="JSicon" class="w-[5.625rem] h-auto" src="img/think.svg" alt="A person thinking to itself">
+                    <p id="JSmsg" class="max-w-[11.25rem] text-lg font-thin font-roboto">Do you know what word has this definition?</p>
+                </div>
+                <div id="JSfailmsg" style="display: none;" class="flex justify-between items-center self-stretch">
+                    <img id="JSicon" class="w-[5.625rem] h-auto" src="img/think.svg" alt="A person confused with question marks around them">
+                    <p id="JSmsg" class="max-w-[11.25rem] text-lg font-thin font-roboto">hmm...I don’t think that’s correct.</p>
+                </div>
+                <div id="JSsuccessmsg" style="display: none;"  class="flex justify-between items-center self-stretch">
+                    <img id="JSicon" class="w-[5.625rem] h-auto" src="img/think.svg" alt="A person cheering">
+                    <p id="JSmsg" class="max-w-[11.25rem] text-lg font-thin font-roboto">Wow! Good guess, that really was it!/p>
+                </div>
+            </div>
+
+            <!-- Input-->
+            <input id="JSinput" class="p-5 text-gray-500 font-bold text-lg font-roboto border-none rounded-xl" type="text" placeholder="I think its..." >
+
+            <!-- Bottom Container: Buttons -->
+            <div class="flex justify-between items-center self-stretch">
+                <button id="JSskip" class="rounded-xl text-white px-2.5 py-5 font-roboto text-lg font-extrabold tracking-[0.075rem] bg-fail">Reveal Answer</button>
+                <button id="JSsubmit" class="rounded-xl  text-white px-2.5 py-5 font-roboto text-lg font-extrabold tracking-[0.075rem] bg-correct">Submit</button>
+                <button id="JSnext" style="display: none;" class="rounded-xl text-white  px-2.5 py-5 font-roboto text-lg font-extrabold tracking-[0.075rem] bg-base">Next Word</button>
+            </div>
+
+        </div>
+    </main>
+    <footer class="bg-base w-full py-4 flex flex-col items-center shadow-base-shadow">
+        <p class="text-center max-w-[17.25rem] text-white font-roboto font-light mb-1">Developed By Jerrel Lustre</p>
+        <p class="text-center max-w-[17.25rem] text-white font-roboto font-light mb-4">Made with the Merriam Webster API and Random Word API</p>
+        <a href="jerrellustre.com" target="_blank" class="flex font-roboto text-base font-bold text-white">
+            See my portfolio for more projects
+            <img src="../src/img/link.svg" alt="" class="ml-3">
+        </a>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>
