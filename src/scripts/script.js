@@ -1,3 +1,6 @@
+// Definition
+let defContainer = document.querySelector("#JSdef")
+
 // Target Input Controls
 
 // Elements to modify styles
@@ -6,7 +9,7 @@
 let word = "";
 
 // Load Random Word
-
+let mykey = ""
 function randomWord() {
     let uriRandom = "https://random-word-api.herokuapp.com/word";
     Promise.all([
@@ -21,7 +24,11 @@ function randomWord() {
           .then((response) => response.json())
           .then((def) => {
             console.log(word);
-            console.log(def);
+            console.log(def[0]);
+            console.log(def[0].shortdef);
+            console.log(defContainer);
+            console.log(grabDefinition(word, mykey))
+            defContainer.textContent = "word"
           })
           .catch((error) => {
             console.error("Error occurred while fetching definition:", error);
